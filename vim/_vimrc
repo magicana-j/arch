@@ -1,0 +1,66 @@
+set nocompatible
+
+" 画面表示
+set number
+set relativenumber
+set cursorline
+"set cursorcolumn
+set laststatus=2
+set cmdheight=2
+set showmatch
+set helpheight=999
+"set list
+" 不可視文字の表示記号設定
+"set listchars=tab:▸\ ,eol:¶,extends:〉
+syntax enable
+
+" カラースキーム
+colorscheme desert
+"set background=light
+
+" ビープ設定
+set visualbell t_vb=
+set noerrorbells
+
+" カーソル移動関連
+set backspace=indent,eol,start
+set whichwrap=b,s,h,l,<,>,[,]
+set scrolloff=8
+set sidescrolloff=16
+set sidescroll=1
+nnoremap j gj
+nnoremap k gk
+
+" ファイル処理関連
+set confirm
+set hidden
+set autoread
+set nobackup
+set noswapfile
+
+" 検索/置換
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set wrapscan
+set gdefault
+
+" タブ/インデント
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set smartindent
+
+" 動作環境との統合関連
+set clipboard=unnamed,unnamedplus
+set mouse=a
+set shellslash
+set iminsert=2
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" コマンドライン設定
+set wildmenu wildmode=list:longest,full
+set history=10000
