@@ -1,5 +1,4 @@
 sudo pacman -Sy
-sudo pacman -S noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
 sudo pacman -S fcitx5-im fcitx5-mozc fcitx5-configtool
 sudo cat <<EOL >> /etc/environment
 
