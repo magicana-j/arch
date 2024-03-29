@@ -1,0 +1,8 @@
+bindsym $mod+Prior workspace prev
+bindsym $mod+Next workspace next
+
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec --no-startup-id fcitx
+exec --no-startup-id parcellite
+exec --no-startup-id volumeicon
