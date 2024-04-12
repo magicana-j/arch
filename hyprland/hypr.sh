@@ -11,6 +11,6 @@ yay -S hyprlock hypridle # ロック画面 自動ロック
 
 yay -S iwgtk pavucontrol nwg-look-bin gnome-themes-extra qt5ct # GUI関係
 # yay -S pipewire pipewire-pulse
-yay -S --needed mako xdg-desktop-portal-hyprland xfce-polkit qt5-wayland qt6-wayland
+yay -S --needed mako dunst xdg-desktop-portal-hyprland xfce-polkit qt5-wayland qt6-wayland
 
 yay -S --needed hyprland
