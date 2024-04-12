@@ -1,4 +1,4 @@
-yay -S --needed waybar hyprpaper wofi cliphist grimblast brightnessctl
+yay -S --needed waybar hyprpaper wofi cliphist grimblast brightnessctl hyprshot
 yay -S --needed ttf-font-awesome #フォント
 
 # yay -S greetd-tuigreet # ログイン画面
