@@ -21,7 +21,7 @@ export QT_IM_MODULE=fcitx
 
 EOF
 
-echo << EOF >> ~/.config/environment.d/im.conf
+cat << EOF > ~/.config/environment.d/im.conf
 XMODIFIERS=@im=fcitx
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
