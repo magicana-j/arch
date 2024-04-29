@@ -1,11 +1,29 @@
-sudo pacman -Syu fcitx5-im fcitx5-mozc fcitx5-configtool
+sudo pacman -S fcitx5-im fcitx5-mozc fcitx5-configtool
 
-echo "XMODIFIERS=@im=fcitx" >> ~/.bashrc
-echo "GTK_IM_MODULE=fcitx" >> ~/.bashrc
-echo "QT_IM_MODULE=fcitx" >> ~/.bashrc
+echo <<EOF >> ~/.bashrc
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
 
-echo "XMODIFIERS=@im=fcitx" >> ~/.xprofile
-echo "GTK_IM_MODULE=fcitx" >> ~/.xprofile
-echo "QT_IM_MODULE=fcitx" >> ~/.xprofile
+EOF
 
-exec fcitx5 -d
+echo <<EOF >> ~/.xprofile
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+
+EOF
+
+echo <<EOF >> ~/.xsession
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+
+EOF
+
+echo <<EOF >> ~/.config/environment.d/im.conf
+XMODIFIERS=@im=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+
+EOF
