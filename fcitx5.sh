@@ -23,7 +23,7 @@ EOF
 
 cat << EOF > ~/.config/environment.d/im.conf
 XMODIFIERS=@im=fcitx
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
+#GTK_IM_MODULE=fcitx
+#QT_IM_MODULE=fcitx
 
 EOF
