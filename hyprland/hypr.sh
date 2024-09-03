@@ -1,9 +1,11 @@
+yay -S --needed fcitx5{-im,mozc,configtool}
+yay -S --needed adobe-source{-code-pro-fonts,-sans-fonts,-serif-fonts,-han-sans-jp-fonts,-han-serif-jp-fonts}
 yay -S --needed waybar hyprpaper wofi cliphist grimblast brightnessctl hyprshot wlogout
 yay -S --needed ttf-font-awesome #フォント
 
 # yay -S greetd-tuigreet # ログイン画面
 yay -S --needed thunar gvfs tumbler ffmpegthumbnailer # ファイルマネージャ
-yay -S --needed kitty foot alacritty
+yay -S --needed kitty foot alacritty xfce4-terminal wezterm
 yay -S --needed gnome-keyring # キーリング
 yay -S --needed htop powertop smartmontools ufw # ユーティリティ
 yay -S --needed hyprlock hypridle # ロック画面 自動ロック
