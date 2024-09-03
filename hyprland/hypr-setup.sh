@@ -4,7 +4,7 @@ yay -S --needed waybar hyprpaper wofi cliphist grimblast brightnessctl hyprshot 
 yay -S --needed ttf-font-awesome #フォント
 
 # yay -S greetd-tuigreet # ログイン画面
-yay -S --needed thunar gvfs tumbler ffmpegthumbnailer # ファイルマネージャ
+yay -S --needed dolphin thunar gvfs tumbler ffmpegthumbnailer # ファイルマネージャ
 yay -S --needed kitty foot alacritty xfce4-terminal wezterm
 yay -S --needed gnome-keyring # キーリング
 yay -S --needed htop powertop smartmontools ufw # ユーティリティ
