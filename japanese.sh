@@ -1,4 +1,4 @@
-sudo pacman -S noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
+sudo pacman -S --needed noto-fonts-{cjk,extra,emoji} otf-ipafont
 # LANG=C xdg-user-dirs-gtk-update
 # sudo sed -i.bak -r ‘s/^#(ja_JP.UTF-8)/\1/i’ /etc/locale.gen
 # sudo localectl set-keymap jp106
