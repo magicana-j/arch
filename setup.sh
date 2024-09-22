@@ -15,5 +15,5 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 EOF
 sudo pacman -S --needed lib32-mesa lib32-vulkan-intel
-sudo pacman -S --needed gparted pacman-contrib neovim vim nano less timeshift fastfetch neofetch wget curl unzip zip p7zip xarchiver bash-completion
+sudo pacman -S --needed gnome-software gparted pacman-contrib neovim vim nano less timeshift fastfetch neofetch wget curl unzip zip p7zip xarchiver bash-completion
 sudo pacman -S --needed ufw gufw xdg-user-dirs-gtk gnome-keyring
