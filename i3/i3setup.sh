@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S i3wm i3status i3blocks i3lock dunst dmenu alacritty
+sudo pacman -S i3-wm i3status i3blocks i3lock dunst dmenu alacritty grim slurp picom ttf-font-awesome
 
 mkdir -p ~/.config/i3blocks
 mkdir -p ~/.config/i3status
