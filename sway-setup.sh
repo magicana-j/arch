@@ -10,5 +10,5 @@ sudo pacman -S --needed wayland xorg-xwayland xorg-server-xwayland polkit \
   brightnessctl pipewire pipewire-pulse pavucontrol wireplumber network-manager-applet \
   firefox \
   gvfs ntfs3g xdg-user-dirs-gtk bluez blueman \
-  xarchiver nemo mako volumeicon \
+  xarchiver nemo nemo-fileroller mako volumeicon \
   sway
