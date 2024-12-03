@@ -9,6 +9,6 @@ sudo pacman -S --needed wayland xorg-xwayland xorg-server-xwayland polkit \
   noro-fonts-cjk fcitx5-{im,configtool,mozc} \
   brightnessctl pipewire pipewire-pulse pavucontrol wireplumber network-manager-applet \
   firefox \
-  gvfs ntfs3g xdg-user-dirs-gtk bluez blueman \
+  gvfs ntfs-3g xdg-user-dirs-gtk bluez blueman \
   xarchiver nemo nemo-fileroller mako volumeicon \
   sway
