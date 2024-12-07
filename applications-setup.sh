@@ -2,7 +2,7 @@ export LANG=C
 sudo pacman -Syyu
 sudo pacman -S --needed firefox
 sudo pacman -S --needed go
-sudo pacman -S --needed noto-fonts-{cjk,extra,emoji}
+sudo pacman -S --needed noto-fonts-{cjk,extra,emoji} adobe-source-code-pro-fonts
 sudo pacman -S --needed bluez blueman
 sudo pacman -S --needed flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
