@@ -9,7 +9,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo pacman -S --needed network-manager-applet
 sudo pacman -S --needed podman podman-compose
 sudo pacman -S --needed fcitx5-im fcitx5-mozc fcitx5-configtool
-cat << EOF >> ~/.xinitrc
+cat << EOF >> ~/.xprofile
 export XMODIFIERS=@im=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
