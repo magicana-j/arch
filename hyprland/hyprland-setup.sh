@@ -1,6 +1,6 @@
 sudo pacman -S --needed waybar hyprpaper wofi cliphist grimblast brightnessctl hyprshot wlogout network-manager-applet pavucontrol mako
 sudo pacman -S --needed ttf-font-awesome #フォント
-yay -S --needed htop powertop smartmontools ufw # ユーティリティ
+yay -S --needed htop powertop smartmontools ufw gufw # ユーティリティ
 #yay -S --needed iwgtk pavucontrol nwg-look-bin gnome-themes-extra qt5ct # GUI関係
 #yay -S greetd-tuigreet # ログイン画面
 #yay -S --needed gnome-keyring # キーリング
