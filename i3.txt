@@ -1,0 +1,11 @@
+dmenu
+xterm
+rofi
+i3-wm
+i3blocks
+i3status
+i3lock
+polybar
+volumeicon
+network-manager-applet
+

@@ -1,0 +1,5 @@
+bluez
+bluez-utils
+bluez-libs
+blueman
+

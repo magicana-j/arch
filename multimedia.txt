@@ -1,0 +1,9 @@
+ffmpeg
+openh264
+gimp
+inkscape
+vlc
+shotcut
+handbrake
+shotwell
+
