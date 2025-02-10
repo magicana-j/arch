@@ -1,31 +1,31 @@
 #!/bin/sh
 
 base=(
-	firefox
-	go
-	gparted
-	pacman-contrib
-	vim
-	neovim
-	nano
-	less
-	timeshift
-	htop
-	fastfetch
-	wget
-	curl
-	zip
-	unzip
-	xarchiver
-	bash-completion
-	ufw
-	gufw
-	xdg-user-dirs-gtk
-	reflector
-	mousepad
-	geany
-	lm_sensors
-	tmux
+    firefox
+    go
+    gparted
+    pacman-contrib
+    vim
+    neovim
+    nano
+    less
+    timeshift
+    htop
+    fastfetch
+    wget
+    curl
+    zip
+    unzip
+    xarchiver
+    bash-completion
+    ufw
+    gufw
+    xdg-user-dirs-gtk
+    reflector
+    mousepad
+    geany
+    lm_sensors
+    tmux
 )
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
