@@ -1,7 +1,11 @@
 #!/bin/bash
 
+if [ ! -d log ]; then
+    mkdir log
+fi
+
 # ログファイルの設定
-LOG_FILE="installation_log.txt"
+LOG_FILE="log/installation_log.txt"
 
 # パッケージのインストール処理を行う関数
 install_packages() {
@@ -10,7 +14,7 @@ install_packages() {
     
     while IFS= read -r package; do
         # 空行やコメント行をスキップ
-        [ -z "$pkg" ] || [ "${pkg#\#}" != "$pkg" ] && continue
+        #[ -z "$pkg" ] || [ "${pkg#\#}" != "$pkg" ] && continue
 
         # パッケージがインストールされているか確認
         if pacman -Qi "$package" &> /dev/null; then
