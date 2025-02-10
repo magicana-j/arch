@@ -1,14 +1,21 @@
 #!/bin/sh
 
 pkg_list=(
-    ffmpeg
-    openh264
-    gimp
-    inkscape
-    vlc
-    shotcut
-    handbrake
-    shotwell
+    xf86-video-intel
+    mesa
+    lib32-mesa
+    vulkan-intel
+    lib32-vulkan-intel
+    xf86-video-amdgpu
+    xf86-video-ati
+    vulkan-radeon
+    vulkan-amdvlk
+    lib32-vulkan-radeon
+    lib32-amdvlk
+    xf86-video-nouveau
+    vulkan-nouveau
+    lib32-vulkan-nouveau
+    steam
 )
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

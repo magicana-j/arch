@@ -19,7 +19,7 @@ fi
 
 source "$(SCRIPT_DIR)/install.sh"
 
-LOG_FILE="$(PARENT_DIR)/log/installation-base_$(date +%Y%m%d-%H%M%S).txt"
+LOG_FILE="$(PARENT_DIR)/log/installation-_$(date +%Y%m%d-%H%M%S).txt"
 
 for pkg in "${pkg_list}"; do
     install_packages "$pkg" "$LOG_FILE"
