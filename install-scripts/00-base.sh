@@ -1,6 +1,6 @@
 #!/bin/sh
 
-base=(
+pkg_list=(
     firefox
     go
     gparted
@@ -39,7 +39,7 @@ source "$(SCRIPT_DIR)/install.sh"
 
 LOG_FILE="$(PARENT_DIR)/log/installation-base_$(date +%Y%m%d-%H%M%S).txt"
 
-for pkg in "${base}"; do
+for pkg in "${pkg_list}"; do
 	install_packages "$pkg" "$LOG_FILE"
 done
 
