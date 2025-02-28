@@ -25,10 +25,10 @@ echo 'Installing Easy Effects ...'
 flatpak install -y flathub com.github.wwmm.easyeffects
 
 echo 'Installing LibreOffice ...'
-flatpak install flathub org.libreoffice.LibreOffice
+flatpak install -y flathub org.libreoffice.LibreOffice
 
 echo 'Installing Steam ...'
-flatpak install flathub com.valvesoftware.Steam
+flatpak install -y flathub com.valvesoftware.Steam
 
 echo 'Installing Bottles ...'
-flatpak install flathub com.usebottles.bottles
+flatpak install -y flathub com.usebottles.bottles
