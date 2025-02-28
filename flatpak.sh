@@ -23,3 +23,12 @@ flatpak install -y flathub com.github.vkohaupt.vokoscreenNG
 # Easy Effects
 echo 'Installing Easy Effects ...'
 flatpak install -y flathub com.github.wwmm.easyeffects
+
+echo 'Installing LibreOffice ...'
+flatpak install flathub org.libreoffice.LibreOffice
+
+echo 'Installing Steam ...'
+flatpak install flathub com.valvesoftware.Steam
+
+echo 'Installing Bottles ...'
+flatpak install flathub com.usebottles.bottles
