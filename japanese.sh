@@ -1,15 +1,30 @@
-sudo pacman -S --needed noto-fonts-{cjk,extra,emoji} adobe-source-code-pro-fonts
-sudo pacman -S --needed fcitx5-{im,configtool,mozc}
+#!/usr/bin/env bash
+set -euo pipefail
 
-echo << EOF >> ~/.xprofile
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-EOF
+# Install Japanese fonts from AUR using yay
+# Packages:
+# - ttf-udev-gothic
+# - ttf-hackgen
+# - ttf-firge
+# - ttf-plemoljp
 
-# LANG=C xdg-user-dirs-gtk-update
-# sudo sed -i.bak -r ‘s/^#(ja_JP.UTF-8)/\1/i’ /etc/locale.gen
-# sudo localectl set-keymap jp106
-# sudo locale-gen
-# sudo localectl set-locale ja_JP.utf-8
-# echo “export LANG=C” | sudo tee -a ~/.bashrc
+FONTS=(
+  ttf-udev-gothic
+  ttf-hackgen
+  ttf-firge
+  ttf-plemoljp
+)
+
+if ! command -v yay >/dev/null 2>&1; then
+  echo "WARNING: yay command not found." >&2
+  echo "Please install an AUR helper (yay) before running this script." >&2
+  exit 1
+fi
+
+echo "Installing Japanese fonts from AUR"
+echo "Packages: ${FONTS[*]}"
+
+yay -S --needed "${FONTS[@]}"
+
+echo "Done."
+echo "If the fonts are not available immediately, run: fc-cache -fv"
