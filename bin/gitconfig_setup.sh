@@ -1,55 +1,91 @@
 #!/usr/bin/env bash
+# Git Default Configuration Script
 
-# --- ROUTINE: Configure HTTPS (Access Token) ---
-configure_https() {
-    echo "Setting up HTTPS with Access Token..."
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        git config --global credential.helper osxkeychain
-    else
-        git config --global credential.helper store
-    fi
-    # Remove SSH rewrite if it exists to avoid conflicts
-    git config --global --unset-all url."git@github.com:".insteadOf 2>/dev/null
-    echo "Success: HTTPS (Credential Helper) configured."
-}
+set -e
 
-# --- ROUTINE: Configure SSH ---
-configure_ssh() {
-    echo "Setting up SSH..."
-    # Force GitHub to use SSH even if cloned via HTTPS
-    git config --global url."git@github.com:".insteadOf "https://github.com/"
-    # Unset credential helper to clean up
-    git config --global --unset credential.helper 2>/dev/null
-    echo "Success: SSH (URL Rewriting) configured."
-}
+# --- Functions ---
+print_info()    { echo "[INFO] $1"; }
+print_success() { echo "[OK]   $1"; }
+print_error()   { echo "[ERR]  $1" >&2; }
 
-# --- MAIN EXECUTION ---
-case "$1" in
-    "https")
-        configure_https
+# --- Main ---
+echo "=== Git Default Configuration ==="
+echo
+
+# User info
+read -rp "Username: " git_user
+if [[ -z "$git_user" ]]; then
+    print_error "Username is required."
+    exit 1
+fi
+
+read -rp "Email address: " git_email
+if [[ -z "$git_email" ]]; then
+    print_error "Email address is required."
+    exit 1
+fi
+
+# Remote connection method
+echo
+echo "Remote connection method:"
+echo "  1) SSH"
+echo "  2) Token (HTTPS)"
+read -rp "Select [1/2]: " conn_choice
+
+case "$conn_choice" in
+    1)
+        CONN_METHOD="ssh"
+        # Disable credential helper; SSH handles auth via keys
+        git config --global --unset credential.helper 2>/dev/null || true
         ;;
-    "ssh")
-        configure_ssh
+    2)
+        CONN_METHOD="token"
+        # Use the OS default credential store
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+            git config --global credential.helper osxkeychain
+        elif command -v git-credential-manager &>/dev/null; then
+            git config --global credential.helper manager
+        else
+            # Fallback: cache for 8 hours
+            git config --global credential.helper "cache --timeout=28800"
+        fi
         ;;
     *)
-        # Interactive mode if no argument is provided
-        echo "Git Configuration Utility"
-        read -p "Enter Git User Name: " git_user
-        read -p "Enter Git Email: " git_email
-
-        git config --global user.name "$git_user"
-        git config --global user.email "$git_email"
-
-        echo "-------------------------------"
-        echo "Select connection method:"
-        echo "1) HTTPS (Token)"
-        echo "2) SSH"
-        read -p "Choice [1/2]: " choice
-
-        [[ "$choice" == "1" ]] && configure_https
-        [[ "$choice" == "2" ]] && configure_ssh
+        print_error "Invalid selection."
+        exit 1
         ;;
 esac
 
-echo "-------------------------------"
-git config --list --global | grep -E "user|credential|url"
+# --- Apply settings ---
+git config --global user.name  "$git_user"
+git config --global user.email "$git_email"
+git config --global init.defaultBranch main
+
+# General quality-of-life defaults
+git config --global core.autocrlf input      # LF on commit (safe on macOS/Linux)
+git config --global pull.rebase false         # merge strategy for pull
+git config --global push.autoSetupRemote true # auto-track remote branch on push
+git config --global core.editor "${EDITOR:-vi}"
+
+# --- Summary ---
+echo
+echo "=== Applied Configuration ==="
+echo "  user.name            : $git_user"
+echo "  user.email           : $git_email"
+echo "  init.defaultBranch   : main"
+echo "  connection method    : $CONN_METHOD"
+echo "  core.autocrlf        : input"
+echo "  pull.rebase          : false"
+echo "  push.autoSetupRemote : true"
+echo "  core.editor          : ${EDITOR:-vi}"
+echo
+git config --global --list | grep -E "^(user|init|credential|core|pull|push)" || true
+echo
+print_success "Git configuration complete."
+
+# SSH hint
+if [[ "$CONN_METHOD" == "ssh" ]]; then
+    echo
+    print_info "Make sure your SSH public key is registered with your Git host (GitHub/GitLab/etc.)."
+    print_info "Run 'generate_ssh_key.sh' if you haven't generated a key yet."
+fi
