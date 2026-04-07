@@ -1,0 +1,54 @@
+# Neovimのバックアップ・一時ファイル
+*~
+*.swp
+*.swo
+*.swn
+*.bak
+.netrwhist
+
+# Shadaファイル（コマンド履歴など）
+*.shada
+*.shada.tmp.*
+
+# ログファイル
+*.log
+lsp.log
+
+# lazy.nvimのデータディレクトリ
+data/
+state/
+.cache/
+
+# プラグインが生成するファイル
+plugged/
+site/
+swap/
+backup/
+undo/
+session/
+
+# OS固有のファイル
+.DS_Store
+Thumbs.db
+.directory
+
+# エディタ・IDE設定
+.vscode/
+.idea/
+*.code-workspace
+
+# 環境設定ファイル（APIキーなど）
+.env
+.env.*
+secret.lua
+config.local.lua
+
+# Lua言語サーバーのメタデータ
+.lua_ls/
+.luarc.json
+
+# 一時的なプロジェクトファイル
+*.tmp
+*.temp
+.project
+.settings/
