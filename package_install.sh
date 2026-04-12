@@ -12,7 +12,8 @@ PACKAGES=(
     "noto-fonts-cjk" "noto-fonts-extra" "noto-fonts-emoji"
     "fcitx5-mozc" "fcitx5-configtool" "fcitx5-gtk" "fcitx5-qt"
     "base-devel" "go" "git" "curl"
-    "firefox" "audacity" "ffmpeg" "vlc" "gimp"
+    "firefox" "audacity" "ffmpeg" "vlc" "vlc-plugins-all" "gimp"
+    "openh264" "intel-media-sdk" "onevpl-intel-gpu" "libva-intel-driver"
     "vim" "neovim" "geany" "btop" "fastfetch" "xdg-user-dirs-gtk"
 )
 

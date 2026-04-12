@@ -1,6 +1,6 @@
 [font]
-normal = {family = "HackGen", style = "Regular"}
-size = 13.0
+normal = {family = "Fira Code", style = "Regular"}
+size = 11.0
 
 [window]
 decorations = "full"
