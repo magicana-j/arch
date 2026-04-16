@@ -8,11 +8,11 @@ fi
 
 # インストール対象（公式リポジトリ）
 PACKAGES=(
-    "gvfs" "udiskie" "exfat-utils"
+    "gvfs" "udiskie" "exfat-utils" "seahorse"
     "noto-fonts-cjk" "noto-fonts-extra" "noto-fonts-emoji"
     "fcitx5-mozc" "fcitx5-configtool" "fcitx5-gtk" "fcitx5-qt"
     "base-devel" "go" "git" "curl"
-    "firefox" "audacity" "ffmpeg" "vlc" "vlc-plugins-all" "gimp"
+    "firefox" "gimp"
     "openh264" "intel-media-sdk" "onevpl-intel-gpu" "libva-intel-driver"
     "vim" "neovim" "geany" "btop" "fastfetch" "xdg-user-dirs-gtk"
 )
