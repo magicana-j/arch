@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- カラースキーム（組み込み）
--- vim.cmd("colorscheme industry") -- 他に "elflord", "evening", "morning", "industry" なども可
+vim.cmd("colorscheme industry") -- 他に "elflord", "evening", "morning", "industry" なども可
 
 -- リーダーキーの設定
 vim.g.mapleader = " "
